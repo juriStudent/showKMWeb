@@ -45,9 +45,9 @@ function createTable(dataArray) {
     let max_columns = 5;
     let NAAM = 0;
     let VOERTUIGCODE = 1;
-    let KM = 2;
-    let TIJDSTIP = 3;
-    let VOERTUIGBESCHRIJVING = 4;
+    let KM = 3;
+    let TIJDSTIP = 4;
+    let VOERTUIGBESCHRIJVING = 2;
 
     // HEADER
     let thead = document.createElement('thead');
@@ -83,10 +83,11 @@ function createTable(dataArray) {
         }
 
 
-        column[NAAM].innerHTML = dataArray[i].name;
+        column[NAAM].innerHTML = nameCapitals(dataArray[i].name);
         column[VOERTUIGCODE].innerHTML = dataArray[i].vehicleCode;
         column[KM].innerHTML = dataArray[i].km;
         column[TIJDSTIP].innerHTML = convertTime(dataArray[i].timeID);
+        column[VOERTUIGBESCHRIJVING].innerHTML = dataArray[i].vehicleDescription;
 
 
         for (let i2 = 0; i2 != max_columns; i2++) {
@@ -120,4 +121,19 @@ function doubleDigits(number) {
         string = "0" + string;
     }
     return string;
+}
+
+function nameCapitals(name) {
+    let nameArray = name.split(" ");
+
+    let capitalName = "";
+    for (let i = 0; i != nameArray.length; i++) {
+        // Fixes the space at the end
+        let endChar = " ";
+        if (i == nameArray.length - 1) {
+            endChar = "";
+        }
+        capitalName += nameArray[i].charAt(0).toUpperCase() + nameArray[i].slice(1) + endChar;
+    }
+    return capitalName;
 }
