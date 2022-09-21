@@ -1,9 +1,12 @@
 let urlArray = (window.location.search).split("?");
-let allData = JSON.parse(atob(urlArray[1]));
-
-console.log(allData);
 
 window.onload = function pageLoad() {
+    if(urlArray.length == 1){
+        window.location.replace("https://juri-km-test.azurewebsites.net/api/ikbenadmin");
+    }
+
+    let allData = JSON.parse(atob(urlArray[1]));
+
     createTable(allData);
     return;
 };
