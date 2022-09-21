@@ -1,28 +1,7 @@
-let allData = [{
-    "name": "bruce wayne",
-    "vehicleCode": "ABC124",
-    "km": 12,
-    "timeID": 663564824.777,
-    "vehicleDescription": "Red Ferrari"
-}, {
-    "name": "jerry the mouse",
-    "vehicleCode": "ABC126",
-    "km": 23,
-    "timeID": 166351239824.777,
-    "vehicleDescription": "Black Ferrari"
-}, {
-    "name": "tom the cat",
-    "vehicleCode": "ABC125",
-    "km": 14,
-    "timeID": 1663594824.777,
-    "vehicleDescription": "Pink Ferrari"
-}, {
-    "name": "ben tennyson",
-    "vehicleCode": "ABC125",
-    "km": 20,
-    "timeID": 1663594824.777,
-    "vehicleDescription": "Yellow Ferrari"
-}];
+let urlArray = (window.location.search).split("?");
+let allData = JSON.parse(atob(urlArray[1]));
+
+console.log(allData);
 
 window.onload = function pageLoad() {
     createTable(allData);
