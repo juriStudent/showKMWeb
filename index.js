@@ -1,30 +1,12 @@
-let allData = [{
-    "name": "bruce wayne",
-    "vehicleCode": "ABC124",
-    "km": 12,
-    "timeID": 663564824.777,
-    "vehicleDescription": "Red Ferrari"
-}, {
-    "name": "jerry the mouse",
-    "vehicleCode": "ABC126",
-    "km": 23,
-    "timeID": 166351239824.777,
-    "vehicleDescription": "Black Ferrari"
-}, {
-    "name": "tom the cat",
-    "vehicleCode": "ABC125",
-    "km": 14,
-    "timeID": 1663594824.777,
-    "vehicleDescription": "Pink Ferrari"
-}, {
-    "name": "ben tennyson",
-    "vehicleCode": "ABC125",
-    "km": 20,
-    "timeID": 1663594824.777,
-    "vehicleDescription": "Yellow Ferrari"
-}];
+let urlArray = (window.location.search).split("?");
 
 window.onload = function pageLoad() {
+    if(urlArray.length == 1){
+        window.location.replace("https://juri-km-test.azurewebsites.net/api/ikbenadmin");
+    }
+
+    let allData = JSON.parse(atob(urlArray[1]));
+
     createTable(allData);
     return;
 };
@@ -45,9 +27,9 @@ function createTable(dataArray) {
     let max_columns = 5;
     let NAAM = 0;
     let VOERTUIGCODE = 1;
-    let KM = 2;
-    let TIJDSTIP = 3;
-    let VOERTUIGBESCHRIJVING = 4;
+    let KM = 3;
+    let TIJDSTIP = 4;
+    let VOERTUIGBESCHRIJVING = 2;
 
     // HEADER
     let thead = document.createElement('thead');
@@ -83,10 +65,11 @@ function createTable(dataArray) {
         }
 
 
-        column[NAAM].innerHTML = dataArray[i].name;
+        column[NAAM].innerHTML = nameCapitals(dataArray[i].name);
         column[VOERTUIGCODE].innerHTML = dataArray[i].vehicleCode;
         column[KM].innerHTML = dataArray[i].km;
         column[TIJDSTIP].innerHTML = convertTime(dataArray[i].timeID);
+        column[VOERTUIGBESCHRIJVING].innerHTML = dataArray[i].vehicleDescription;
 
 
         for (let i2 = 0; i2 != max_columns; i2++) {
@@ -120,4 +103,19 @@ function doubleDigits(number) {
         string = "0" + string;
     }
     return string;
+}
+
+function nameCapitals(name) {
+    let nameArray = name.split(" ");
+
+    let capitalName = "";
+    for (let i = 0; i != nameArray.length; i++) {
+        // Fixes the space at the end
+        let endChar = " ";
+        if (i == nameArray.length - 1) {
+            endChar = "";
+        }
+        capitalName += nameArray[i].charAt(0).toUpperCase() + nameArray[i].slice(1) + endChar;
+    }
+    return capitalName;
 }
