@@ -1,15 +1,9 @@
 // Get the JSON using JQuerry. 
 $.getJSON("https://juri-km-test.azurewebsites.net/api/true", function (data) {
-    pageLoad(data);
+    createTable(data);
 });
 
-
-function pageLoad(allData) {
-    createTable2(allData);
-    return;
-};
-
-function createTable2(dataArray) {
+function createTable(dataArray) {
     let table = document.getElementById('table');
 
     // Create thread and tbody

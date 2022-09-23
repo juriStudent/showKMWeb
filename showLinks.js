@@ -1,16 +1,9 @@
 // Get the JSON using JQuerry. 
 $.getJSON("https://juri-km-test.azurewebsites.net/api/false", function (data) {
-    pageLoad(data);
+    createTable(data);
 });
 
-
-function pageLoad(allData) {
-    createTable2(allData);
-    return;
-};
-
-
-function createTable2(dataArray) {
+function createTable(dataArray) {
     let table = document.getElementById('table');
 
     // Create thread and tbody
@@ -27,8 +20,8 @@ function createTable2(dataArray) {
     <td>Voertuig beschrijving</td>
     <td>km</td>
     <td>Tijdstip</td>
-    <td>Tijdstip</td></tr>`
-    
+    <td>Tijdstip</td></tr>`;
+
 
     // Reduce the JSON array
     let bodyData = dataArray.reduce(function (previousValue, cv) {
@@ -45,7 +38,7 @@ function createTable2(dataArray) {
 
 
     // Fill in tbody
-    tbody.innerHTML = bodyData 
+    tbody.innerHTML = bodyData;
 }
 
 function convertTime(seconds) {
