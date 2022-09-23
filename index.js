@@ -1,12 +1,10 @@
-
 // Get the JSON using JQuerry. 
-let allData;
 $.getJSON("https://juri-km-test.azurewebsites.net/api/true", function (data) {
-    allData = data;
+    pageLoad(data);
 });
 
 
-window.onload = function pageLoad() {
+function pageLoad(allData) {
     createTable2(allData);
     return;
 };
