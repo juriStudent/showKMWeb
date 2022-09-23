@@ -39,14 +39,18 @@ function createTable2(dataArray) {
 
     // Reduce the JSON array
     let bodyData = dataArray.reduce(function (previousValue, cv) {
+        if (typeof previousValue === "object"){
+            previousValue = ""
+        }
+
         return previousValue +
-    (`<tr>
-    <td>${cv.name}<td>
-    <td>${cv.vehicleCode}<td>
-    <td>${cv.vehicleDescription}</td>
-    <td>${cv.km}</td>
-    <td>${cv.timeID}</td>
-    </tr>`), "";
+            (`<tr>
+            <td>${cv.name}<td>
+            <td>${cv.vehicleCode}<td>
+            <td>${cv.vehicleDescription}</td>
+            <td>${cv.km}</td>
+            <td>${cv.timeID}</td>
+            </tr>`);
     });
 
 
