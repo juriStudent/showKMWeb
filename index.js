@@ -13,9 +13,45 @@ window.onload = function pageLoad() {
 
     let allData = JSON.parse(atob(urlArray[1]));
 
-    createTable(allData);
+    createTable2(allData);
     return;
 };
+
+function createTable2(dataArray) {
+    let body = document.getElementById('body');
+
+    // Create the table
+    body.innerHTML = "<table id='table'></table>";
+    let table = document.getElementById('table');
+
+    // Create thread and tbody
+    table.innerHTML = `<thead id ='thead'></thead>
+    <tbody id = 'tbody'></tbody>`;
+    let thead = document.getElementById('thead');
+    let tbody = document.getElementById('tbody');
+
+    // Fill in thead
+    thead.innerHTML = `
+    <tr><td>Naam</td>
+    <td>Voertuig Code</td>
+    <td>Voertuig beschrijving</td>
+    <td>km</td>
+    <td>Tijdstip</td></tr>`
+    
+
+    // Reduce the JSON array
+    let bodyData = dataArray.reduce((previousValue, cv) => previousValue + 
+    (`<tr>
+    <td>${cv.name}<td>
+    <td>${cv.vehicleCode}<td>
+    <td>${cv.vehicleDescription}</td>
+    <td>${cv.km}</td>
+    <td>${cv.timeID}</td>
+    </tr>`))
+
+    // Fill in tbody
+    tbody.innerHTML = bodyData 
+}
 
 function createTable(dataArray) {
     // TABLE
