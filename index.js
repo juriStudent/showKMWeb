@@ -40,11 +40,11 @@ function createTable2(dataArray) {
     let bodyData = dataArray.reduce(function (previousValue, cv) {
         return previousValue +
             (`<tr>
-            <td>${cv.name}<td>
+            <td>${nameCapitals(cv.name)}<td>
             <td>${cv.vehicleCode}<td>
             <td>${cv.vehicleDescription}</td>
             <td>${cv.km}</td>
-            <td>${cv.timeID}</td>
+            <td>${convertTime(cv.timeID)}</td>
             </tr>`);
     }, "");
 
