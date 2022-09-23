@@ -28,12 +28,16 @@ function createTable(dataArray) {
     }
 
     // CONFIG
-    let max_columns = 5;
+    let max_columns = 6;
+
     let NAAM = 0;
     let VOERTUIGCODE = 1;
+    let VOERTUIGBESCHRIJVING = 2;
     let KM = 3;
     let TIJDSTIP = 4;
-    let VOERTUIGBESCHRIJVING = 2;
+    let LINKS = 5;
+
+
 
     // HEADER
     let thead = document.createElement('thead');
@@ -48,6 +52,7 @@ function createTable(dataArray) {
     header[KM].innerHTML = "km";
     header[TIJDSTIP].innerHTML = "Tijdstip";
     header[VOERTUIGBESCHRIJVING].innerHTML = "Voertuig beschrijving";
+    header[LINKS].innerHTML = "Link";
     // CONFIG
 
     for (let i = 0; i != max_columns; i++) {
@@ -74,6 +79,7 @@ function createTable(dataArray) {
         column[KM].innerHTML = dataArray[i].km;
         column[TIJDSTIP].innerHTML = convertTime(dataArray[i].timeID);
         column[VOERTUIGBESCHRIJVING].innerHTML = dataArray[i].vehicleDescription;
+        column[LINKS].innerHTML = dataArray[i].Link;
 
 
         for (let i2 = 0; i2 != max_columns; i2++) {
