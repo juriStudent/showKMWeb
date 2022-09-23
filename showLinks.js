@@ -37,14 +37,17 @@ function createTable2(dataArray) {
     
 
     // Reduce the JSON array
-    let bodyData = dataArray.reduce((previousValue, cv) => previousValue + 
+    let bodyData = dataArray.reduce(function (previousValue, cv) {
+        return previousValue +
     (`<tr>
     <td>${cv.name}<td>
     <td>${cv.vehicleCode}<td>
     <td>${cv.vehicleDescription}</td>
     <td>${cv.km}</td>
     <td>${cv.timeID}</td>
-    </tr>`))
+    </tr>`);
+    });
+
 
     // Fill in tbody
     tbody.innerHTML = bodyData 

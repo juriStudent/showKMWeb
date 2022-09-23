@@ -1,4 +1,4 @@
-let functionURL = "https://juri-km-test.azurewebsites.net/api/ikbenadmin/true"
+let functionURL = "https://juri-km-test.azurewebsites.net/api/ikbenadmin/true";
 
 let urlArray = (window.location.search).split("?");
 
@@ -21,7 +21,8 @@ function createTable2(dataArray) {
     let table = document.getElementById('table');
 
     // Create thread and tbody
-    table.innerHTML = `<thead id ='thead'></thead>
+    table.innerHTML = `
+    <thead id ='thead'></thead>
     <tbody id = 'tbody'></tbody>`;
     let thead = document.getElementById('thead');
     let tbody = document.getElementById('tbody');
@@ -32,21 +33,23 @@ function createTable2(dataArray) {
     <td>Voertuig Code</td>
     <td>Voertuig beschrijving</td>
     <td>km</td>
-    <td>Tijdstip</td></tr>`
-    
+    <td>Tijdstip</td></tr>`;
+
 
     // Reduce the JSON array
-    let bodyData = dataArray.reduce((previousValue, cv) => previousValue + 
+    let bodyData = dataArray.reduce(function (previousValue, cv) {
+        return previousValue +
     (`<tr>
     <td>${cv.name}<td>
     <td>${cv.vehicleCode}<td>
     <td>${cv.vehicleDescription}</td>
     <td>${cv.km}</td>
     <td>${cv.timeID}</td>
-    </tr>`))
+    </tr>`);
+    });
 
     // Fill in tbody
-    tbody.innerHTML = bodyData 
+    tbody.innerHTML = bodyData;
 }
 
 function createTable(dataArray) {
