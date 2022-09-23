@@ -13,7 +13,7 @@ window.onload = function pageLoad() {
 
     let allData = JSON.parse(atob(urlArray[1]));
 
-    createTable(allData);
+    createTable2(allData);
     return;
 };
 
