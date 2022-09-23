@@ -6,7 +6,7 @@ $.getJSON("https://juri-km-test.azurewebsites.net/api/true", function (data) {
 function createTable(dataArray) {
     let table = document.getElementById('table');
 
-    // Create thread and tbody
+    // Create thead and tbody
     table.innerHTML = `
     <thead id ='thead'></thead>
     <tbody id = 'tbody'></tbody>`;
