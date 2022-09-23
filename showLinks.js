@@ -21,7 +21,7 @@ function createTable2(dataArray) {
     let body = document.getElementById('body');
 
     // Create the table
-    body.innerHTML = "<table id='table'></table>";
+    body.innerHTML += "<table id='table'></table>";
     let table = document.getElementById('table');
 
     // Create thread and tbody
