@@ -13,11 +13,11 @@ window.onload = function pageLoad() {
 
     let allData = JSON.parse(atob(urlArray[1]));
 
-    createTable2(allData);
+    createTable(allData);
     return;
 };
 
-function createTable(dataArray) {
+function createTable2(dataArray) {
     let table = document.getElementById('table');
 
     // Create thread and tbody
