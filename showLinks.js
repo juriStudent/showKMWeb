@@ -75,13 +75,13 @@ function createTable(dataArray) {
             column.push(document.createElement('td'));
         }
 
-
+            
         column[NAAM].innerHTML = nameCapitals(dataArray[i].name);
         column[VOERTUIGCODE].innerHTML = dataArray[i].vehicleCode;
         column[KM].innerHTML = dataArray[i].km;
         column[TIJDSTIP].innerHTML = convertTime(dataArray[i].timeID);
         column[VOERTUIGBESCHRIJVING].innerHTML = dataArray[i].vehicleDescription;
-        column[LINKS].innerHTML = dataArray[i].Link;
+        column[LINKS].innerHTML = dataArray[i].link;
 
 
         for (let i2 = 0; i2 != max_columns; i2++) {
