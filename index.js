@@ -13,7 +13,7 @@ window.onload = function pageLoad() {
 
     let allData = JSON.parse(atob(urlArray[1]));
 
-    createTable(allData);
+    createTable2(allData);
     return;
 };
 
@@ -45,8 +45,8 @@ function createTable2(dataArray) {
     <td>${cv.vehicleDescription}</td>
     <td>${cv.km}</td>
     <td>${cv.timeID}</td>
-    </tr>`);
-    },"");
+    </tr>`), ""
+    });
 
     // Fill in tbody
     tbody.innerHTML = bodyData;
