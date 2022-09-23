@@ -7,7 +7,7 @@ window.onload = function pageLoad() {
     if (urlArray.length == 1) {
         window.location.replace(functionURL);
     }
-    else if (urlArray[2] - currentTime < 5000) {
+    else if (urlArray[2] - currentTime > 5000) {
         window.location.replace(functionURL);
     }
 

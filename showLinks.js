@@ -3,11 +3,11 @@ let functionURL = "https://juri-km-test.azurewebsites.net/api/ikbenadmin/false"
 let urlArray = (window.location.search).split("?");
 
 window.onload = function pageLoad() {
-    let currentTime = new Date() / 1; // In milimeter
+    let currentTime = new Date() / 1; // In milliseconds
     if (urlArray.length == 1) {
         window.location.replace(functionURL);
     }
-    else if (urlArray[2] - currentTime < 5000) {
+    else if (urlArray[2] - currentTime > 5000) {
         window.location.replace(functionURL);
     }
 
