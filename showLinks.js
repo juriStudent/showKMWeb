@@ -1,17 +1,10 @@
-let functionURL = "https://juri-km-test.azurewebsites.net/api/false";
-
-let urlArray = (window.location.search).split("?");
+// Get the JSON using JQuerry. 
+let allData;
+$.getJSON("https://juri-km-test.azurewebsites.net/api/false", function (data) {
+    allData = data;
+});
 
 window.onload = function pageLoad() {
-    let currentTime = new Date() / 1; // In milliseconds
-    if (urlArray.length == 1) {
-        window.location.replace(functionURL);
-    }
-    else if (currentTime - urlArray[2] > 5000) {
-        window.location.replace(functionURL);
-    }
-
-    let allData = JSON.parse(atob(urlArray[1]));
 
     createTable2(allData);
     return;

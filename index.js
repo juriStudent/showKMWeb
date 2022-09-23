@@ -1,22 +1,12 @@
-let functionURL = "https://juri-km-test.azurewebsites.net/api/true";
 
-let urlArray = (window.location.search).split("?");
-
-$.getJSON("https://juri-km-test.azurewebsites.net/api/false", function (data) {
-	console.log(data);
+// Get the JSON using JQuerry. 
+let allData;
+$.getJSON("https://juri-km-test.azurewebsites.net/api/true", function (data) {
+    allData = data;
 });
-/*
+
+
 window.onload = function pageLoad() {
-    let currentTime = new Date() / 1; // In milimeter
-    if (urlArray.length == 1) {
-        window.location.replace(functionURL);
-    }
-    else if (currentTime - urlArray[2] > 5000) {
-        window.location.replace(functionURL);
-    }
-
-    let allData = JSON.parse(atob(urlArray[1]));
-
     createTable2(allData);
     return;
 };
@@ -94,4 +84,4 @@ function nameCapitals(name) {
         capitalName += nameArray[i].charAt(0).toUpperCase() + nameArray[i].slice(1) + endChar;
     }
     return capitalName;
-}*/
+}
