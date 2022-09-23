@@ -17,7 +17,7 @@ window.onload = function pageLoad() {
     return;
 };
 
-function createTable2(dataArray) {
+function createTable(dataArray) {
     let table = document.getElementById('table');
 
     // Create thread and tbody
