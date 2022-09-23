@@ -19,7 +19,7 @@ tr:nth-child(even) {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 20%;
+	width: 10%;
 
 	padding: 30px;
 }
