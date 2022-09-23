@@ -46,7 +46,7 @@ function createTable2(dataArray) {
     <td>${cv.km}</td>
     <td>${cv.timeID}</td>
     </tr>`);
-    });
+    },"");
 
     // Fill in tbody
     tbody.innerHTML = bodyData;
