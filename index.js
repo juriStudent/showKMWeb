@@ -5,7 +5,7 @@ let urlArray = (window.location.search).split("?");
 $.getJSON("https://juri-km-test.azurewebsites.net/api/false", function (data) {
 	console.log(data);
 });
-
+/*
 window.onload = function pageLoad() {
     let currentTime = new Date() / 1; // In milimeter
     if (urlArray.length == 1) {
@@ -94,4 +94,4 @@ function nameCapitals(name) {
         capitalName += nameArray[i].charAt(0).toUpperCase() + nameArray[i].slice(1) + endChar;
     }
     return capitalName;
-}
+}*/
