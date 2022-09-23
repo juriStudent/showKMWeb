@@ -1,4 +1,4 @@
-let functionURL = "https://juri-km-test.azurewebsites.net/api/ikbenadmin/true";
+let functionURL = "https://juri-km-test.azurewebsites.net/api/true";
 
 let urlArray = (window.location.search).split("?");
 
@@ -50,75 +50,6 @@ function createTable2(dataArray) {
 
     // Fill in tbody
     tbody.innerHTML = bodyData;
-}
-
-function createTable(dataArray) {
-    // TABLE
-    // Get the table
-    let table = document.getElementById('table');
-    // Add to body
-    document.getElementById('body').appendChild(table);
-    // Create the rows.
-    let rows = [];
-    for (let i = 0; i < dataArray.length + 1; i++) {
-        rows.push(document.createElement('tr'));
-    }
-
-    // CONFIG
-    let max_columns = 5;
-    let NAAM = 0;
-    let VOERTUIGCODE = 1;
-    let KM = 3;
-    let TIJDSTIP = 4;
-    let VOERTUIGBESCHRIJVING = 2;
-
-    // HEADER
-    let thead = document.createElement('thead');
-    table.appendChild(thead);
-    let header = [];
-    for (let i = 0; i != max_columns; i++) {
-        header.push(document.createElement('td'));
-    }
-
-    header[NAAM].innerHTML = "Naam";
-    header[VOERTUIGCODE].innerHTML = "Voertuig Code";
-    header[KM].innerHTML = "km";
-    header[TIJDSTIP].innerHTML = "Tijdstip";
-    header[VOERTUIGBESCHRIJVING].innerHTML = "Voertuig beschrijving";
-    // CONFIG
-
-    for (let i = 0; i != max_columns; i++) {
-        rows[0].appendChild(header[i]);
-    }
-
-    thead.appendChild(rows[0]);
-
-
-    // BODY
-    let tbody = document.createElement('tbody');
-    table.appendChild(tbody);
-
-    for (let i = 0; i < rows.length - 1; i++) {
-        let column = [];
-
-        for (let i = 0; i != max_columns; i++) {
-            column.push(document.createElement('td'));
-        }
-
-
-        column[NAAM].innerHTML = nameCapitals(dataArray[i].name);
-        column[VOERTUIGCODE].innerHTML = dataArray[i].vehicleCode;
-        column[KM].innerHTML = dataArray[i].km;
-        column[TIJDSTIP].innerHTML = convertTime(dataArray[i].timeID);
-        column[VOERTUIGBESCHRIJVING].innerHTML = dataArray[i].vehicleDescription;
-
-
-        for (let i2 = 0; i2 != max_columns; i2++) {
-            rows[i + 1].appendChild(column[i2]);
-        }
-
-        tbody.appendChild(rows[i + 1]);
-    }
 }
 
 function convertTime(seconds) {
