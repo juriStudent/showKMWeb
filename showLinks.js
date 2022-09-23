@@ -1,12 +1,14 @@
+let functionURL = "https://juri-km-test.azurewebsites.net/api/ikbenadmin/false"
+
 let urlArray = (window.location.search).split("?");
 
 window.onload = function pageLoad() {
     let currentTime = new Date() / 1; // In milimeter
     if (urlArray.length == 1) {
-        window.location.replace("https://juri-km-test.azurewebsites.net/api/ikbenadmin");
+        window.location.replace(functionURL);
     }
     else if (urlArray[2] - currentTime < 5000) {
-        window.location.replace("https://juri-km-test.azurewebsites.net/api/ikbenadmin");
+        window.location.replace(functionURL);
     }
 
     let allData = JSON.parse(atob(urlArray[1]));
