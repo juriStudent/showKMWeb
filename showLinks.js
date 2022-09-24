@@ -20,7 +20,7 @@ function createTable(dataArray) {
     <td>Voertuig beschrijving</td>
     <td>km</td>
     <td>Tijdstip</td>
-    <td>Tijdstip</td></tr>`;
+    <td>Link</td></tr>`;
 
 
     // Reduce the JSON array
